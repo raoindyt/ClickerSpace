@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Planet Clicker</title>
+    
+    
+  <script type="module" crossorigin src="./assets/index.68f26fa8.js"></script>
+  <link rel="stylesheet" href="./assets/index.64173c22.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="game-container">
+        <!-- Верхняя панель -->
+        <div class="top-panel">
+            <div class="money-display">
+                <div class="money-icon"></div>
+                <span id="money-amount">0</span>
+            </div>
+            <button class="settings-btn" id="settings-btn">
+                <div class="settings-icon"></div>
+            </button>
+        </div>
+
+        <!-- Центральная область с планетой -->
+        <div class="planet-area">
+            <div class="planet-earth" id="planet-earth">
+                <div class="planet-surface"></div>
+                <div class="planet-glow"></div>
+            </div>
+        </div>
+
+        <!-- Нижняя панель с кнопками -->
+        <div class="bottom-panel">
+            <button class="action-btn" id="shop-btn">
+                <div class="btn-icon shop-icon"></div>
+            </button>
+            <button class="action-btn" id="map-btn">
+                <div class="btn-icon map-icon"></div>
+            </button>
+            <button class="action-btn" id="friends-btn">
+                <div class="btn-icon friends-icon"></div>
+            </button>
+        </div>
+
+        <!-- Панель настроек -->
+        <div class="settings-panel" id="settings-panel">
+            <div class="panel-header">
+                <h3>Настройки</h3>
+                <button class="close-btn" id="close-settings">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="setting-item">
+                    <label>Звук</label>
+                    <input type="checkbox" id="sound-toggle" checked>
+                </div>
+                <div class="setting-item">
+                    <label>Музыка</label>
+                    <input type="checkbox" id="music-toggle" checked>
+                </div>
+                <div class="setting-item">
+                    <label>Автосохранение</label>
+                    <input type="checkbox" id="autosave-toggle" checked>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель карты вселенной -->
+        <div class="map-panel" id="map-panel">
+            <div class="panel-header">
+                <h3>🗺️ Карта Вселенной</h3>
+                <button class="close-btn" id="close-map">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="map-item">
+                    <div class="map-planet">🌍</div>
+                    <div class="map-info">
+                        <h4>Земля</h4>
+                        <p>Текущая планета • Активна</p>
+                    </div>
+                    <div class="map-status active">Активна</div>
+                </div>
+                <div class="map-item locked">
+                    <div class="map-planet">🔴</div>
+                    <div class="map-info">
+                        <h4>Марс</h4>
+                        <p>Требуется 1000 монет</p>
+                    </div>
+                    <div class="map-status locked">Заблокирован</div>
+                </div>
+                <div class="map-item locked">
+                    <div class="map-planet">🪐</div>
+                    <div class="map-info">
+                        <h4>Сатурн</h4>
+                        <p>Требуется 5000 монет</p>
+                    </div>
+                    <div class="map-status locked">Заблокирован</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель магазина -->
+        <div class="shop-panel" id="shop-panel">
+            <div class="panel-header">
+                <h3>🛍️ Магазин</h3>
+                <button class="close-btn" id="close-shop">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="shop-item">
+                    <div class="shop-item-icon">⬆️</div>
+                    <div class="shop-item-info">
+                        <h4>Увеличить клик</h4>
+                        <p>+1 к доходу за клик</p>
+                        <span class="shop-price">💰 10</span>
+                    </div>
+                    <button class="shop-buy-btn" id="buy-click">Купить</button>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-item-icon">🤖</div>
+                    <div class="shop-item-info">
+                        <h4>Автоклик</h4>
+                        <p>+1 к автоматическому доходу</p>
+                        <span class="shop-price">💰 50</span>
+                    </div>
+                    <button class="shop-buy-btn" id="buy-auto">Купить</button>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-item-icon">🚀</div>
+                    <div class="shop-item-info">
+                        <h4>Ракетный ускоритель</h4>
+                        <p>Увеличивает доход за клик в 2 раза</p>
+                        <span class="shop-price">💰 100</span>
+                    </div>
+                    <button class="shop-buy-btn">Купить</button>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-item-icon">🛰️</div>
+                    <div class="shop-item-info">
+                        <h4>Спутник</h4>
+                        <p>Автоматически добывает ресурсы</p>
+                        <span class="shop-price">💰 500</span>
+                    </div>
+                    <button class="shop-buy-btn">Купить</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель друзей -->
+        <div class="friends-panel" id="friends-panel">
+            <div class="panel-header">
+                <h3>Друзья</h3>
+                <button class="close-btn" id="close-friends">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="friend-item">
+                    <div class="friend-avatar">👤</div>
+                    <div class="friend-info">
+                        <h4>Игрок123</h4>
+                        <p>Уровень: 15 • Онлайн</p>
+                    </div>
+                    <button class="visit-btn">Посетить</button>
+                </div>
+                <div class="friend-item">
+                    <div class="friend-avatar">👤</div>
+                    <div class="friend-info">
+                        <h4>SpaceExplorer</h4>
+                        <p>Уровень: 8 • 2 часа назад</p>
+                    </div>
+                    <button class="visit-btn">Посетить</button>
+                </div>
+                <div class="add-friend">
+                    <input type="text" placeholder="Введите ID друга" class="friend-input">
+                    <button class="add-btn">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
