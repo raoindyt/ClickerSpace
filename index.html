@@ -6,8 +6,8 @@
     <title>Planet Clicker</title>
     
     
-  <script type="module" crossorigin src="./assets/index.39442b3e.js"></script>
-  <link rel="stylesheet" href="./assets/index.01f60e46.css">
+  <script type="module" crossorigin src="./assets/index.6df5864d.js"></script>
+  <link rel="stylesheet" href="./assets/index.d48366f4.css">
 </head>
 <body>
     <div class="overlay" id="overlay"></div>
@@ -77,7 +77,9 @@
             </div>
             <div class="panel-content">
                 <div class="map-item">
-                    <div class="map-planet">🌍</div>
+                    <div class="map-planet">
+                        <div class="planet-image earth-planet"></div>
+                    </div>
                     <div class="map-info">
                         <h4>Земля</h4>
                         <p>Текущая планета • Активна</p>
@@ -101,6 +103,26 @@
                     <div class="map-info">
                         <h4>Сатурн</h4>
                         <p>Требуется 5000 монет</p>
+                    </div>
+                    <div class="map-status locked">Заблокирован</div>
+                </div>
+                <div class="map-item locked">
+                    <div class="map-planet">
+                        <div class="planet-image jupiter-planet"></div>
+                    </div>
+                    <div class="map-info">
+                        <h4>Юпитер</h4>
+                        <p>Требуется 10000 монет</p>
+                    </div>
+                    <div class="map-status locked">Заблокирован</div>
+                </div>
+                <div class="map-item locked">
+                    <div class="map-planet">
+                        <div class="planet-image sun-planet"></div>
+                    </div>
+                    <div class="map-info">
+                        <h4>Солнце</h4>
+                        <p>Требуется 50000 монет</p>
                     </div>
                     <div class="map-status locked">Заблокирован</div>
                 </div>
@@ -167,6 +189,24 @@
                         <span class="shop-price">💰 5000</span>
                     </div>
                     <button class="shop-buy-btn" id="buy-saturn">Купить</button>
+                </div>
+                <div class="shop-item special">
+                    <div class="shop-item-icon planet jupiter"></div>
+                    <div class="shop-item-info">
+                        <h4>Планета Юпитер</h4>
+                        <p>Разблокировать планету Юпитер</p>
+                        <span class="shop-price">💰 10000</span>
+                    </div>
+                    <button class="shop-buy-btn" id="buy-jupiter">Купить</button>
+                </div>
+                <div class="shop-item special">
+                    <div class="shop-item-icon planet sun"></div>
+                    <div class="shop-item-info">
+                        <h4>Звезда Солнце</h4>
+                        <p>Разблокировать звезду Солнце</p>
+                        <span class="shop-price">💰 50000</span>
+                    </div>
+                    <button class="shop-buy-btn" id="buy-sun">Купить</button>
                 </div>
             </div>
         </div>
