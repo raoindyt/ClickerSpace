@@ -7,8 +7,8 @@
     
     
     <script src='//libtl.com/sdk.js' data-zone='9701900' data-sdk='show_9701900'></script>
-  <script type="module" crossorigin src="./assets/main.1e537af9.js"></script>
-  <link rel="stylesheet" href="./assets/index.7c6bac95.css">
+  <script type="module" crossorigin src="./assets/main.985aa777.js"></script>
+  <link rel="stylesheet" href="./assets/index.c8d7dce9.css">
 </head>
 <body>
 
@@ -133,7 +133,7 @@
         <!-- Панель магазина -->
         <div class="shop-panel" id="shop-panel">
             <div class="panel-header">
-                <h3>🛍️ Магазин</h3>
+                <h3><span class="shop-icon"></span> Магазин</h3>
                 <button class="close-btn" id="close-shop">×</button>
             </div>
             <!-- Вкладки магазина -->
@@ -144,56 +144,60 @@
             <div class="panel-content">
                 <!-- Вкладка улучшений -->
                 <div class="shop-tab-content active" id="upgrades-tab">
-                    <div class="upgrades-grid">
+                    <div class="shop-grid">
                         <!-- Спутник -->
-                        <div class="upgrade-item" data-upgrade="satellite">
-                            <div class="upgrade-icon">🛰️</div>
-                            <div class="upgrade-info">
-                                <h4>Спутник</h4>
-                                <p>Увеличивает силу клика</p>
-                                <div class="upgrade-price">💰 <span id="satellite-price">100</span></div>
+                        <div class="shop-item" data-upgrade="satellite">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">🛰️</div>
+                                <div class="shop-item-info">
+                                    <h4>Спутник</h4>
+                                    <p>Увеличивает силу клика</p>
+                                </div>
                             </div>
-                            <button class="upgrade-buy-btn" onclick="gameInstance.buySatellite()">Купить</button>
+                            <div class="shop-price">💰 <span id="satellite-price">100</span></div>
+                            <button class="shop-buy-btn" onclick="gameInstance.buySatellite()">Купить</button>
                         </div>
                         
                         <!-- Космический корабль -->
-                        <div class="upgrade-item" data-upgrade="spaceship">
-                            <div class="upgrade-icon">🚀</div>
-                            <div class="upgrade-info">
-                                <h4>Космический корабль</h4>
-                                <p>Автоматические клики</p>
-                                <div class="upgrade-price">💰 <span id="spaceship-price">500</span></div>
+                        <div class="shop-item" data-upgrade="spaceship">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">🚀</div>
+                                <div class="shop-item-info">
+                                    <h4>Космический корабль</h4>
+                                    <p>Автоматические клики</p>
+                                </div>
                             </div>
-                            <button class="upgrade-buy-btn" onclick="gameInstance.buySpaceship()">Купить</button>
+                            <div class="shop-price">💰 <span id="spaceship-price">500</span></div>
+                            <button class="shop-buy-btn" onclick="gameInstance.buySpaceship()">Купить</button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Вкладка доната -->
                 <div class="shop-tab-content" id="donate-tab">
-                    <div class="donate-container">
+                    <div class="donate-grid">
                         <!-- Донат за звезды -->
-                        <div class="donate-section">
-                            <div class="donate-item stars-donate">
-                                <div class="donate-icon">⭐</div>
-                                <div class="donate-info">
+                        <div class="shop-item special">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">⭐</div>
+                                <div class="shop-item-info">
                                     <h4>Донат за звезды</h4>
                                     <p>Поддержите разработку через Telegram Stars</p>
                                 </div>
-                                <button class="donate-btn" onclick="gameInstance.buyWithStars()">Купить за звезды</button>
                             </div>
+                            <button class="shop-buy-btn" onclick="gameInstance.buyWithStars()">Купить за звезды</button>
                         </div>
                         
                         <!-- Просмотр рекламы -->
-                        <div class="ad-section">
-                            <div class="ad-item">
-                                <div class="ad-icon">📺</div>
-                                <div class="ad-info">
+                        <div class="shop-item">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">📺</div>
+                                <div class="shop-item-info">
                                     <h4>Посмотреть рекламу</h4>
                                     <p>Получите 2x бонус к доходу на 1 минуту!</p>
                                 </div>
-                                <button class="ad-btn" id="watch-ad-btn" onclick="gameInstance.watchAd()">Смотреть рекламу</button>
                             </div>
+                            <button class="shop-buy-btn" id="watch-ad-btn" onclick="gameInstance.watchAd()">Смотреть рекламу</button>
                         </div>
                     </div>
                 </div>
