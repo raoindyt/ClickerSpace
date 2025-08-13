@@ -6,8 +6,8 @@
     <title>Planet Clicker</title>
     
     
-  <script type="module" crossorigin src="./assets/index.3e97389b.js"></script>
-  <link rel="stylesheet" href="./assets/index.0199679d.css">
+  <script type="module" crossorigin src="./assets/index.d881814d.js"></script>
+  <link rel="stylesheet" href="./assets/index.24c97b2a.css">
 </head>
 <body>
     <div class="overlay" id="overlay"></div>
@@ -135,42 +135,110 @@
                 <h3>🛍️ Магазин</h3>
                 <button class="close-btn" id="close-shop">×</button>
             </div>
+            <!-- Вкладки магазина -->
+            <div class="shop-tabs">
+                <button class="shop-tab active" data-tab="store">Магазин</button>
+                <button class="shop-tab" data-tab="donate">Донат</button>
+            </div>
             <div class="panel-content">
-                <div class="shop-item">
-                    <div class="shop-item-icon">⬆️</div>
-                    <div class="shop-item-info">
-                        <h4>Увеличить клик</h4>
-                        <p>+1 к доходу за клик</p>
-                        <span class="shop-price">💰 10</span>
+                <!-- Вкладка магазина -->
+                <div class="shop-tab-content active" id="store-tab">
+                    <div class="shop-item">
+                        <div class="shop-item-icon">⬆️</div>
+                        <div class="shop-item-info">
+                            <h4>Увеличить клик</h4>
+                            <p>+1 к доходу за клик</p>
+                            <span class="shop-price">💰 10</span>
+                        </div>
+                        <button class="shop-buy-btn" id="buy-click">Купить</button>
                     </div>
-                    <button class="shop-buy-btn" id="buy-click">Купить</button>
+                    <div class="shop-item">
+                        <div class="shop-item-icon">🤖</div>
+                        <div class="shop-item-info">
+                            <h4>Автоклик</h4>
+                            <p>+1 к автоматическому доходу</p>
+                            <span class="shop-price">💰 50</span>
+                        </div>
+                        <button class="shop-buy-btn" id="buy-auto">Купить</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-item-icon">🚀</div>
+                        <div class="shop-item-info">
+                            <h4>Ракетный ускоритель</h4>
+                            <p>Увеличивает доход за клик в 2 раза</p>
+                            <span class="shop-price">💰 100</span>
+                        </div>
+                        <button class="shop-buy-btn">Купить</button>
+                    </div>
+                    <div class="shop-item">
+                        <div class="shop-item-icon">🛰️</div>
+                        <div class="shop-item-info">
+                            <h4>Спутник</h4>
+                            <p>Автоматически добывает ресурсы</p>
+                            <span class="shop-price">💰 500</span>
+                        </div>
+                        <button class="shop-buy-btn">Купить</button>
+                    </div>
                 </div>
-                <div class="shop-item">
-                    <div class="shop-item-icon">🤖</div>
-                    <div class="shop-item-info">
-                        <h4>Автоклик</h4>
-                        <p>+1 к автоматическому доходу</p>
-                        <span class="shop-price">💰 50</span>
+                
+                <!-- Вкладка доната -->
+                <div class="shop-tab-content" id="donate-tab">
+                    <div class="donate-info">
+                        <h3>Поддержать проект</h3>
+                        <p>Ваш донат поможет в развитии игры и добавлении новых функций!</p>
                     </div>
-                    <button class="shop-buy-btn" id="buy-auto">Купить</button>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-item-icon">🚀</div>
-                    <div class="shop-item-info">
-                        <h4>Ракетный ускоритель</h4>
-                        <p>Увеличивает доход за клик в 2 раза</p>
-                        <span class="shop-price">💰 100</span>
+                    
+                    <div class="donate-options">
+                        <div class="donate-item">
+                            <div class="donate-item-icon">☕</div>
+                            <div class="donate-item-info">
+                                <h4>Чашка кофе</h4>
+                                <p>Поддержка разработчика</p>
+                                <span class="donate-price">50 💰</span>
+                            </div>
+                            <button class="donate-btn" data-amount="50">Купить</button>
+                        </div>
+                        
+                        <div class="donate-item">
+                            <div class="donate-item-icon">🍕</div>
+                            <div class="donate-item-info">
+                                <h4>Пицца</h4>
+                                <p>Хорошая поддержка</p>
+                                <span class="donate-price">100 💰</span>
+                            </div>
+                            <button class="donate-btn" data-amount="100">Купить</button>
+                        </div>
+                        
+                        <div class="donate-item">
+                            <div class="donate-item-icon">🎮</div>
+                            <div class="donate-item-info">
+                                <h4>Игровая приставка</h4>
+                                <p>Серьезная поддержка</p>
+                                <span class="donate-price">500 💰</span>
+                            </div>
+                            <button class="donate-btn" data-amount="500">Купить</button>
+                        </div>
+                        
+                        <div class="donate-item">
+                            <div class="donate-item-icon">🚀</div>
+                            <div class="donate-item-info">
+                                <h4>Космический корабль</h4>
+                                <p>Максимальная поддержка</p>
+                                <span class="donate-price">1000 💰</span>
+                            </div>
+                            <button class="donate-btn" data-amount="1000">Купить</button>
+                        </div>
                     </div>
-                    <button class="shop-buy-btn">Купить</button>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-item-icon">🛰️</div>
-                    <div class="shop-item-info">
-                        <h4>Спутник</h4>
-                        <p>Автоматически добывает ресурсы</p>
-                        <span class="shop-price">💰 500</span>
+                    
+                    <div class="donate-benefits">
+                        <h4>Преимущества доната:</h4>
+                        <ul>
+                            <li>🌟 Эксклюзивные предметы</li>
+                            <li>✨ Увеличенный бонус к доходу</li>
+                            <li>🎨 Специальные визуальные эффекты</li>
+                            <li>🏆 Специальный значок в игре</li>
+                        </ul>
                     </div>
-                    <button class="shop-buy-btn">Купить</button>
                 </div>
             </div>
         </div>

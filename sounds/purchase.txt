@@ -1,0 +1,4 @@
+Placeholder for purchase sound effect
+Format: MP3 or WAV
+Duration: ~1 second
+Description: A satisfying sound that plays when a planet or upgrade is purchased

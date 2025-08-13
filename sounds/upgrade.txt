@@ -1,0 +1,4 @@
+Placeholder for upgrade sound effect
+Format: MP3 or WAV
+Duration: ~1 second
+Description: A distinct sound that plays when an upgrade is purchased

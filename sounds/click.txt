@@ -1,0 +1,4 @@
+Placeholder for click sound effect
+Format: MP3 or WAV
+Duration: ~0.5 seconds
+Description: A short, crisp sound that plays when the planet is clicked
