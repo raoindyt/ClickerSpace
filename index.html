@@ -7,8 +7,8 @@
     
     
     <script src='//libtl.com/sdk.js' data-zone='9701900' data-sdk='show_9701900'></script>
-  <script type="module" crossorigin src="./assets/main.aa7e0fcc.js"></script>
-  <link rel="stylesheet" href="./assets/index.e06a1394.css">
+  <script type="module" crossorigin src="./assets/main.1282bd06.js"></script>
+  <link rel="stylesheet" href="./assets/index.0a6cc018.css">
 </head>
 <body>
 
@@ -202,15 +202,29 @@
                 <!-- Вкладка доната -->
                 <div class="shop-tab-content" id="donate-tab">
                     <div class="donate-grid">
-                        <!-- Донат за звезды -->
-                        <div class="shop-item special">
+                        <!-- Постоянный буст за звезды -->
+                        <div class="shop-item premium" id="permanent-boost-item">
                             <div class="shop-item-content">
                                 <div class="shop-item-icon">⭐</div>
                                 <div class="shop-item-info">
-                                    <h4>Донат за звезды</h4>
-                                    <p>Поддержите разработку через Telegram Stars</p>
+                                    <h4>Постоянный буст x2</h4>
+                                    <p>Увеличивает доход навсегда!</p>
                                 </div>
                             </div>
+                            <div class="shop-price">⭐ 20</div>
+                            <button class="shop-buy-btn" id="buy-permanent-boost">Купить за звезды</button>
+                        </div>
+                        
+                        <!-- Донат за звезды -->
+                        <div class="shop-item special">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">💝</div>
+                                <div class="shop-item-info">
+                                    <h4>Поддержать разработчика</h4>
+                                    <p>Спасибо за поддержку!</p>
+                                </div>
+                            </div>
+                            <div class="shop-price">⭐ 10</div>
                             <button class="shop-buy-btn" onclick="gameInstance.buyWithStars()">Купить за звезды</button>
                         </div>
                         
