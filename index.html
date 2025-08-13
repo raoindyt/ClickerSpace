@@ -7,11 +7,10 @@
     
     
     <script src='//libtl.com/sdk.js' data-zone='9701900' data-sdk='show_9701900'></script>
-  <script type="module" crossorigin src="./assets/index.25b6f7e8.js"></script>
-  <link rel="stylesheet" href="./assets/index.958f0f78.css">
+  <script type="module" crossorigin src="./assets/main.79c027c5.js"></script>
+  <link rel="stylesheet" href="./assets/index.c9c17fee.css">
 </head>
 <body>
-    <div class="overlay" id="overlay"></div>
     <div class="game-container">
         <!-- Верхняя панель -->
         <div class="top-panel">
@@ -139,56 +138,65 @@
             <!-- Вкладки магазина -->
             <div class="shop-tabs">
                 <button class="shop-tab active" data-tab="store">Магазин</button>
+                <button class="shop-tab" data-tab="boosts">Улучшения</button>
                 <button class="shop-tab" data-tab="donate">Донат</button>
             </div>
             <div class="panel-content">
                 <!-- Вкладка магазина -->
                 <div class="shop-tab-content active" id="store-tab">
-                    <div class="shop-grid">
-                        <div class="shop-item">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">⬆️</div>
-                                <div class="shop-item-info">
-                                    <h4>Увеличить клик</h4>
-                                    <p>+1 к доходу за клик</p>
-                                </div>
-                            </div>
-                            <div class="shop-price">💰 10</div>
-                            <button class="shop-buy-btn" id="buy-click">Купить</button>
+                    <!-- Содержимое будет создано динамически -->
+                </div>
+                
+                <!-- Вкладка улучшений -->
+                <div class="shop-tab-content" id="boosts-tab">
+                    <div class="boosts-container" style="padding: 20px;">
+                        <div class="ad-section" style="
+                            background: rgba(255, 255, 255, 0.05);
+                            border-radius: 15px;
+                            padding: 20px;
+                            text-align: center;
+                            margin-bottom: 20px;
+                        ">
+                            <h4 style="margin: 0 0 10px 0; color: #4CAF50; font-size: 18px;">Посмотреть рекламу</h4>
+                            <p style="margin: 0 0 15px 0; color: rgba(255, 255, 255, 0.8); font-size: 14px;">
+                                Получите 2x бонус к доходу на 1 минуту!
+                            </p>
+                            <button class="ad-btn" id="watch-ad-btn" style="
+                                background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+                                border: none;
+                                color: white;
+                                padding: 12px 25px;
+                                border-radius: 25px;
+                                cursor: pointer;
+                                font-weight: 700;
+                                font-size: 15px;
+                                transition: all 0.3s ease;
+                                box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+                                letter-spacing: 0.5px;
+                                text-transform: uppercase;
+                            ">Смотреть рекламу</button>
                         </div>
-                        <div class="shop-item">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">🤖</div>
-                                <div class="shop-item-info">
-                                    <h4>Автоклик</h4>
-                                    <p>+1 к автоматическому доходу</p>
-                                </div>
-                            </div>
-                            <div class="shop-price">💰 50</div>
-                            <button class="shop-buy-btn" id="buy-auto">Купить</button>
-                        </div>
-                        <div class="shop-item">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">🚀</div>
-                                <div class="shop-item-info">
-                                    <h4>Ракетный ускоритель</h4>
-                                    <p>Увеличивает доход за клик в 2 раза</p>
-                                </div>
-                            </div>
-                            <div class="shop-price">💰 100</div>
-                            <button class="shop-buy-btn">Купить</button>
-                        </div>
-                        <div class="shop-item">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">🛰️</div>
-                                <div class="shop-item-info">
-                                    <h4>Спутник</h4>
-                                    <p>Автоматически добывает ресурсы</p>
-                                </div>
-                            </div>
-                            <div class="shop-price">💰 500</div>
-                            <button class="shop-buy-btn">Купить</button>
-                        </div>
+                        
+                        <button class="shop-button free-boost" id="free-boost-btn" style="
+                            width: 100%;
+                            background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+                            border: none;
+                            color: white;
+                            padding: 15px 20px;
+                            border-radius: 15px;
+                            cursor: pointer;
+                            font-weight: 700;
+                            font-size: 16px;
+                            transition: all 0.3s ease;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 5px;
+                        ">
+                            <span class="button-icon" style="font-size: 24px;">🎁</span>
+                            <span class="button-text">Бесплатный буст x1.5 (15 сек)</span>
+                            <span class="button-timer" style="font-size: 12px; opacity: 0.8;"></span>
+                        </button>
                     </div>
                 </div>
                 
@@ -251,10 +259,29 @@
                         </ul>
                     </div>
                     
-                    <div class="ad-section">
-                        <h4>Посмотреть рекламу</h4>
-                        <p>Получите 2x бонус к доходу на 30 секунд!</p>
-                        <button class="ad-btn" id="watch-ad-btn">Смотреть рекламу</button>
+                    <div class="stars-section" style="
+                        background: rgba(255, 255, 255, 0.05);
+                        border-radius: 15px;
+                        padding: 20px;
+                        text-align: center;
+                        margin-top: 20px;
+                    ">
+                        <h4 style="margin: 0 0 10px 0; color: #FFD700;">Донат за звезды Telegram</h4>
+                        <p style="margin: 0 0 15px 0; color: rgba(255, 255, 255, 0.8); font-size: 14px;">
+                            Поддержите разработку игры через Telegram Stars
+                        </p>
+                        <button class="stars-btn" onclick="gameInstance.buyWithStars()" style="
+                            background: linear-gradient(135deg, #FFD700 0%, #FFA000 100%);
+                            border: none;
+                            color: #333;
+                            padding: 12px 25px;
+                            border-radius: 25px;
+                            cursor: pointer;
+                            font-weight: 700;
+                            font-size: 15px;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+                        ">⭐ Купить за звезды</button>
                     </div>
                 </div>
             </div>
@@ -291,6 +318,7 @@
         </div>
     </div>
 
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     
 </body>
 </html>
