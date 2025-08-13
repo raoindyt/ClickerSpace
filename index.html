@@ -6,8 +6,8 @@
     <title>Planet Clicker</title>
     
     
-  <script type="module" crossorigin src="./assets/index.d881814d.js"></script>
-  <link rel="stylesheet" href="./assets/index.24c97b2a.css">
+  <script type="module" crossorigin src="./assets/index.2be2ab40.js"></script>
+  <link rel="stylesheet" href="./assets/index.5546020f.css">
 </head>
 <body>
     <div class="overlay" id="overlay"></div>
@@ -143,41 +143,51 @@
             <div class="panel-content">
                 <!-- Вкладка магазина -->
                 <div class="shop-tab-content active" id="store-tab">
-                    <div class="shop-item">
-                        <div class="shop-item-icon">⬆️</div>
-                        <div class="shop-item-info">
-                            <h4>Увеличить клик</h4>
-                            <p>+1 к доходу за клик</p>
-                            <span class="shop-price">💰 10</span>
+                    <div class="shop-grid">
+                        <div class="shop-item">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">⬆️</div>
+                                <div class="shop-item-info">
+                                    <h4>Увеличить клик</h4>
+                                    <p>+1 к доходу за клик</p>
+                                </div>
+                            </div>
+                            <div class="shop-price">💰 10</div>
+                            <button class="shop-buy-btn" id="buy-click">Купить</button>
                         </div>
-                        <button class="shop-buy-btn" id="buy-click">Купить</button>
-                    </div>
-                    <div class="shop-item">
-                        <div class="shop-item-icon">🤖</div>
-                        <div class="shop-item-info">
-                            <h4>Автоклик</h4>
-                            <p>+1 к автоматическому доходу</p>
-                            <span class="shop-price">💰 50</span>
+                        <div class="shop-item">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">🤖</div>
+                                <div class="shop-item-info">
+                                    <h4>Автоклик</h4>
+                                    <p>+1 к автоматическому доходу</p>
+                                </div>
+                            </div>
+                            <div class="shop-price">💰 50</div>
+                            <button class="shop-buy-btn" id="buy-auto">Купить</button>
                         </div>
-                        <button class="shop-buy-btn" id="buy-auto">Купить</button>
-                    </div>
-                    <div class="shop-item">
-                        <div class="shop-item-icon">🚀</div>
-                        <div class="shop-item-info">
-                            <h4>Ракетный ускоритель</h4>
-                            <p>Увеличивает доход за клик в 2 раза</p>
-                            <span class="shop-price">💰 100</span>
+                        <div class="shop-item">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">🚀</div>
+                                <div class="shop-item-info">
+                                    <h4>Ракетный ускоритель</h4>
+                                    <p>Увеличивает доход за клик в 2 раза</p>
+                                </div>
+                            </div>
+                            <div class="shop-price">💰 100</div>
+                            <button class="shop-buy-btn">Купить</button>
                         </div>
-                        <button class="shop-buy-btn">Купить</button>
-                    </div>
-                    <div class="shop-item">
-                        <div class="shop-item-icon">🛰️</div>
-                        <div class="shop-item-info">
-                            <h4>Спутник</h4>
-                            <p>Автоматически добывает ресурсы</p>
-                            <span class="shop-price">💰 500</span>
+                        <div class="shop-item">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">🛰️</div>
+                                <div class="shop-item-info">
+                                    <h4>Спутник</h4>
+                                    <p>Автоматически добывает ресурсы</p>
+                                </div>
+                            </div>
+                            <div class="shop-price">💰 500</div>
+                            <button class="shop-buy-btn">Купить</button>
                         </div>
-                        <button class="shop-buy-btn">Купить</button>
                     </div>
                 </div>
                 
@@ -188,7 +198,7 @@
                         <p>Ваш донат поможет в развитии игры и добавлении новых функций!</p>
                     </div>
                     
-                    <div class="donate-options">
+                    <div class="donate-grid">
                         <div class="donate-item">
                             <div class="donate-item-icon">☕</div>
                             <div class="donate-item-info">
