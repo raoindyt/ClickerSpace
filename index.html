@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Planet Clicker</title>
     
     
+    
     <script src='//libtl.com/sdk.js' data-zone='9701900' data-sdk='show_9701900'></script>
-  <script type="module" crossorigin src="./assets/main.1282bd06.js"></script>
-  <link rel="stylesheet" href="./assets/index.0a6cc018.css">
+  <script type="module" crossorigin src="./assets/main.c911d14a.js"></script>
+  <link rel="stylesheet" href="./assets/index.726aac5e.css">
 </head>
+
 <body>
 
     <div class="game-container">
@@ -32,6 +35,16 @@
             <div class="planet-earth" id="planet-earth">
                 <div class="planet-surface"></div>
                 <div class="planet-glow"></div>
+
+                <!-- Спрайты улучшений вокруг планеты -->
+                <div class="planet-upgrades">
+                    <div class="planet-upgrade satellite-orbit" id="satellite-orbit" style="display: none;">
+                        <img src="./assets/satellite.e1723a3b.png" alt="Спутник" class="orbiting-sprite">
+                    </div>
+                    <div class="planet-upgrade spaceship-orbit" id="spaceship-orbit" style="display: none;">
+                        <img src="./assets/spacecraft.1cccc7c3.png" alt="Космический корабль" class="orbiting-sprite">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -144,64 +157,56 @@
             <div class="panel-content">
                 <!-- Вкладка улучшений -->
                 <div class="shop-tab-content active" id="upgrades-tab">
-                    <div class="shop-grid">
-                        <!-- Улучшение клика -->
-                        <div class="shop-item" data-upgrade="click">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">👆</div>
-                                <div class="shop-item-info">
-                                    <h4>Улучшить клик</h4>
-                                    <p>Увеличивает доход за клик</p>
-                                </div>
-                            </div>
-                            <div class="shop-price">💰 <span id="click-price">10</span></div>
-                            <button class="shop-buy-btn" id="buy-click">Купить</button>
-                        </div>
-                        
-                        <!-- Улучшение автоклика -->
-                        <div class="shop-item" data-upgrade="auto">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">🤖</div>
-                                <div class="shop-item-info">
-                                    <h4>Улучшить автоклик</h4>
-                                    <p>Увеличивает пассивный доход</p>
-                                </div>
-                            </div>
-                            <div class="shop-price">💰 <span id="auto-price">50</span></div>
-                            <button class="shop-buy-btn" id="buy-auto">Купить</button>
-                        </div>
-                        
+                    <div class="upgrades-list">
                         <!-- Спутник -->
-                        <div class="shop-item" data-upgrade="satellite">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">🛰️</div>
-                                <div class="shop-item-info">
-                                    <h4>Спутник</h4>
-                                    <p>Увеличивает силу клика</p>
+                        <div class="upgrade-item" data-upgrade="satellite" id="satellite-upgrade">
+                            <div class="upgrade-image">
+                                <img src="./assets/satellite.e1723a3b.png" alt="Спутник" class="upgrade-sprite">
+                            </div>
+                            <div class="upgrade-info">
+                                <h3>Спутник</h3>
+                                <p class="upgrade-description">Увеличивает доход за клик на 50%</p>
+                                <div class="upgrade-stats">
+                                    <span class="upgrade-level">Уровень: <span id="satellite-level">0</span></span>
+                                    <span class="upgrade-effect">+50% к клику</span>
                                 </div>
                             </div>
-                            <div class="shop-price">💰 <span id="satellite-price">100</span></div>
-                            <button class="shop-buy-btn" onclick="gameInstance.buySatellite()">Купить</button>
+                            <div class="upgrade-purchase">
+                                <div class="upgrade-price">
+                                    <span class="price-amount" id="satellite-price">100</span>
+                                    <span class="price-currency">💰</span>
+                                </div>
+                                <button class="upgrade-buy-btn" id="buy-satellite">Купить</button>
+                            </div>
                         </div>
-                        
+
                         <!-- Космический корабль -->
-                        <div class="shop-item" data-upgrade="spaceship">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">🚀</div>
-                                <div class="shop-item-info">
-                                    <h4>Космический корабль</h4>
-                                    <p>Автоматические клики</p>
+                        <div class="upgrade-item" data-upgrade="spaceship" id="spaceship-upgrade">
+                            <div class="upgrade-image">
+                                <img src="./assets/spacecraft.1cccc7c3.png" alt="Космический корабль" class="upgrade-sprite">
+                            </div>
+                            <div class="upgrade-info">
+                                <h3>Космический корабль</h3>
+                                <p class="upgrade-description">Добавляет автоматические клики</p>
+                                <div class="upgrade-stats">
+                                    <span class="upgrade-level">Уровень: <span id="spaceship-level">0</span></span>
+                                    <span class="upgrade-effect">+2 клика/сек</span>
                                 </div>
                             </div>
-                            <div class="shop-price">💰 <span id="spaceship-price">500</span></div>
-                            <button class="shop-buy-btn" onclick="gameInstance.buySpaceship()">Купить</button>
+                            <div class="upgrade-purchase">
+                                <div class="upgrade-price">
+                                    <span class="price-amount" id="spaceship-price">500</span>
+                                    <span class="price-currency">💰</span>
+                                </div>
+                                <button class="upgrade-buy-btn" id="buy-spaceship">Купить</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Вкладка доната -->
                 <div class="shop-tab-content" id="donate-tab">
-                    <div class="donate-grid">
+                    <div class="shop-grid">
                         <!-- Постоянный буст за звезды -->
                         <div class="shop-item premium" id="permanent-boost-item">
                             <div class="shop-item-content">
@@ -211,11 +216,11 @@
                                     <p>Увеличивает доход навсегда!</p>
                                 </div>
                             </div>
-                            <div class="shop-price">⭐ 20</div>
-                            <button class="shop-buy-btn" id="buy-permanent-boost">Купить за звезды</button>
+                            <div class="shop-price">1 TON</div>
+                            <button class="shop-buy-btn" id="buy-permanent-boost">Купить через SpaceWallet</button>
                         </div>
-                        
-                        <!-- Донат за звезды -->
+
+                        <!-- Донат через SpaceWallet -->
                         <div class="shop-item special">
                             <div class="shop-item-content">
                                 <div class="shop-item-icon">💝</div>
@@ -224,10 +229,11 @@
                                     <p>Спасибо за поддержку!</p>
                                 </div>
                             </div>
-                            <div class="shop-price">⭐ 10</div>
-                            <button class="shop-buy-btn" onclick="gameInstance.buyWithStars()">Купить за звезды</button>
+                            <div class="shop-price">0.1 TON</div>
+                            <button class="shop-buy-btn" onclick="gameInstance.buyWithSpaceWallet()">Купить через
+                                SpaceWallet</button>
                         </div>
-                        
+
                         <!-- Просмотр рекламы -->
                         <div class="shop-item">
                             <div class="shop-item-content">
@@ -237,46 +243,63 @@
                                     <p>Получите 2x бонус к доходу на 1 минуту!</p>
                                 </div>
                             </div>
-                            <button class="shop-buy-btn" id="watch-ad-btn" onclick="gameInstance.watchAd()">Смотреть рекламу</button>
+                            <button class="shop-buy-btn" id="watch-ad-btn" onclick="gameInstance.watchAd()">Смотреть
+                                рекламу</button>
+                        </div>
+
+                        <!-- Бесплатный буст -->
+                        <div class="shop-item">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">🎁</div>
+                                <div class="shop-item-info">
+                                    <h4>Бесплатный буст</h4>
+                                    <p>Получите 1.5x бонус на 15 секунд!</p>
+                                </div>
+                            </div>
+                            <button class="shop-buy-btn" id="free-boost-btn"
+                                onclick="gameInstance.applyFreeBoost()">Получить буст</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <!-- Панель друзей -->
-        <div class="friends-panel" id="friends-panel">
-            <div class="panel-header">
-                <h3>Друзья</h3>
-                <button class="close-btn" id="close-friends">×</button>
+    </div>
+    </div>
+
+    <!-- Панель друзей -->
+    <div class="friends-panel" id="friends-panel">
+        <div class="panel-header">
+            <h3>Друзья</h3>
+            <button class="close-btn" id="close-friends">×</button>
+        </div>
+        <div class="panel-content">
+            <div class="friend-item">
+                <div class="friend-avatar">👤</div>
+                <div class="friend-info">
+                    <h4>Игрок123</h4>
+                    <p>Уровень: 15 • Онлайн</p>
+                </div>
+                <button class="visit-btn">Посетить</button>
             </div>
-            <div class="panel-content">
-                <div class="friend-item">
-                    <div class="friend-avatar">👤</div>
-                    <div class="friend-info">
-                        <h4>Игрок123</h4>
-                        <p>Уровень: 15 • Онлайн</p>
-                    </div>
-                    <button class="visit-btn">Посетить</button>
+            <div class="friend-item">
+                <div class="friend-avatar">👤</div>
+                <div class="friend-info">
+                    <h4>SpaceExplorer</h4>
+                    <p>Уровень: 8 • 2 часа назад</p>
                 </div>
-                <div class="friend-item">
-                    <div class="friend-avatar">👤</div>
-                    <div class="friend-info">
-                        <h4>SpaceExplorer</h4>
-                        <p>Уровень: 8 • 2 часа назад</p>
-                    </div>
-                    <button class="visit-btn">Посетить</button>
-                </div>
-                <div class="add-friend">
-                    <input type="text" placeholder="Введите ID друга" class="friend-input">
-                    <button class="add-btn">Добавить</button>
-                </div>
+                <button class="visit-btn">Посетить</button>
+            </div>
+            <div class="add-friend">
+                <input type="text" placeholder="Введите ID друга" class="friend-input">
+                <button class="add-btn">Добавить</button>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     
 </body>
+
 </html>
