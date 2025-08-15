@@ -9,8 +9,8 @@
     
     
     <script src='//libtl.com/sdk.js' data-zone='9701900' data-sdk='show_9701900'></script>
-  <script type="module" crossorigin src="./assets/main.439a263a.js"></script>
-  <link rel="stylesheet" href="./assets/index.c4bacf32.css">
+  <script type="module" crossorigin src="./assets/main.44f706ac.js"></script>
+  <link rel="stylesheet" href="./assets/index.1e1f9eb1.css">
 </head>
 
 <body>
@@ -25,11 +25,19 @@
             <div class="income-display" id="income-display">
                 <span id="income-amount">0</span>/сек
             </div>
-            <button class="rebirth-btn" id="rebirth-btn" style="display: none;">
-                <div class="rebirth-icon">🔄</div>
-            </button>
+            <div class="boost-display" id="boost-display">
+                <div class="boost-icon">⚡</div>
+                <span id="boost-multiplier">x1.0</span>
+            </div>
             <button class="settings-btn" id="settings-btn">
                 <div class="settings-icon"></div>
+            </button>
+        </div>
+
+        <!-- Панель кнопки ребитха -->
+        <div class="rebirth-panel">
+            <button class="rebirth-btn" id="rebirth-btn" style="display: none;">
+                <div class="rebirth-icon"></div>
             </button>
         </div>
 
@@ -126,6 +134,50 @@
                 <!-- Вкладка улучшений -->
                 <div class="shop-tab-content active" id="upgrades-tab">
                     <div class="upgrades-list">
+                        <!-- Улучшение клика -->
+                        <div class="upgrade-item" data-upgrade="click" id="click-upgrade">
+                            <div class="upgrade-image">
+                                <div class="upgrade-icon">👆</div>
+                            </div>
+                            <div class="upgrade-info">
+                                <h3>Улучшение клика</h3>
+                                <p class="upgrade-description">Увеличивает доход за клик на +1</p>
+                                <div class="upgrade-stats">
+                                    <span class="upgrade-level">Уровень: <span id="click-level">0</span></span>
+                                    <span class="upgrade-effect">+1 за клик</span>
+                                </div>
+                            </div>
+                            <div class="upgrade-purchase">
+                                <div class="upgrade-price">
+                                    <span class="price-amount" id="click-price">5</span>
+                                    <span class="price-currency">💰</span>
+                                </div>
+                                <button class="upgrade-buy-btn" id="buy-click">Купить</button>
+                            </div>
+                        </div>
+
+                        <!-- Автоклик -->
+                        <div class="upgrade-item" data-upgrade="auto" id="auto-upgrade">
+                            <div class="upgrade-image">
+                                <div class="upgrade-icon">⚡</div>
+                            </div>
+                            <div class="upgrade-info">
+                                <h3>Автоклик</h3>
+                                <p class="upgrade-description">Добавляет автоматические клики</p>
+                                <div class="upgrade-stats">
+                                    <span class="upgrade-level">Уровень: <span id="auto-level">0</span></span>
+                                    <span class="upgrade-effect">+1 клик/сек</span>
+                                </div>
+                            </div>
+                            <div class="upgrade-purchase">
+                                <div class="upgrade-price">
+                                    <span class="price-amount" id="auto-price">25</span>
+                                    <span class="price-currency">💰</span>
+                                </div>
+                                <button class="upgrade-buy-btn" id="buy-auto">Купить</button>
+                            </div>
+                        </div>
+
                         <!-- Спутник -->
                         <div class="upgrade-item" data-upgrade="satellite" id="satellite-upgrade">
                             <div class="upgrade-image">
@@ -198,7 +250,7 @@
                                 </div>
                             </div>
                             <div class="shop-price">0.1 TON</div>
-                            <button class="shop-buy-btn" onclick="gameInstance.buyWithTelegramWallet()">Купить через Telegram Wallet</button>
+                            <button class="shop-buy-btn" onclick="game.buyWithTelegramWallet()">Купить через Telegram Wallet</button>
                         </div>
 
                         <!-- Просмотр рекламы -->
@@ -210,22 +262,10 @@
                                     <p>Получите 2x бонус к доходу на 1 минуту!</p>
                                 </div>
                             </div>
-                            <button class="shop-buy-btn" id="watch-ad-btn" onclick="gameInstance.watchAd()">Смотреть
+                            <button class="shop-buy-btn" id="watch-ad-btn" onclick="game.watchAd()">Смотреть
                                 рекламу</button>
                         </div>
 
-                        <!-- Престиж (Rebirth) -->
-                        <div class="shop-item prestige" id="prestige-item">
-                            <div class="shop-item-content">
-                                <div class="shop-item-icon">🌟</div>
-                                <div class="shop-item-info">
-                                    <h4>Rebirth</h4>
-                                    <p>Сбросить прогресс и получить постоянный бонус!</p>
-                                    <small id="prestige-info">Требуется: Солнце + 1M денег</small>
-                                </div>
-                            </div>
-                            <button class="shop-buy-btn" id="prestige-btn" onclick="gameInstance.performPrestige(gameInstance.money)">Rebirth</button>
-                        </div>
 
 
                     </div>
