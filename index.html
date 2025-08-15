@@ -9,8 +9,8 @@
     
     
     <script src='//libtl.com/sdk.js' data-zone='9701900' data-sdk='show_9701900'></script>
-  <script type="module" crossorigin src="./assets/main.b8199a72.js"></script>
-  <link rel="stylesheet" href="./assets/index.4f617721.css">
+  <script type="module" crossorigin src="./assets/main.439a263a.js"></script>
+  <link rel="stylesheet" href="./assets/index.c4bacf32.css">
 </head>
 
 <body>
@@ -25,6 +25,9 @@
             <div class="income-display" id="income-display">
                 <span id="income-amount">0</span>/сек
             </div>
+            <button class="rebirth-btn" id="rebirth-btn" style="display: none;">
+                <div class="rebirth-icon">🔄</div>
+            </button>
             <button class="settings-btn" id="settings-btn">
                 <div class="settings-icon"></div>
             </button>
@@ -35,16 +38,15 @@
             <div class="planet-earth" id="planet-earth">
                 <div class="planet-surface"></div>
                 <div class="planet-glow"></div>
-
-                <!-- Спрайты улучшений вокруг планеты -->
-                <div class="planet-upgrades">
-                    <div class="planet-upgrade satellite-orbit" id="satellite-orbit" style="display: none;">
-                        <img src="./assets/satellite.e1723a3b.png" alt="Спутник" class="orbiting-sprite">
-                    </div>
-                    <div class="planet-upgrade spaceship-orbit" id="spaceship-orbit" style="display: none;">
-                        <img src="./assets/spacecraft.1cccc7c3.png" alt="Космический корабль" class="orbiting-sprite">
-                    </div>
-                </div>
+            </div>
+        </div>
+        <!-- Спрайты улучшений вокруг планеты -->
+        <div class="planet-upgrades">
+            <div class="planet-upgrade satellite-orbit" id="satellite-orbit" style="display: none;">
+                <img src="./assets/satellite.e1723a3b.png" alt="Спутник" class="orbiting-sprite">
+            </div>
+            <div class="planet-upgrade spaceship-orbit" id="spaceship-orbit" style="display: none;">
+                <img src="./assets/spacecraft.1cccc7c3.png" alt="Космический корабль" class="orbiting-sprite">
             </div>
         </div>
 
@@ -89,56 +91,22 @@
                 <h3>🗺️ Карта Вселенной</h3>
                 <button class="close-btn" id="close-map">×</button>
             </div>
+            <!-- Вкладки карты -->
+            <div class="map-tabs">
+                <button class="map-tab active" data-tab="planets">Планеты</button>
+                <button class="map-tab" data-tab="systems">Системы</button>
+            </div>
             <div class="panel-content">
-                <div class="map-item">
-                    <div class="map-planet">
-                        <div class="planet-image earth-planet"></div>
-                    </div>
-                    <div class="map-info">
-                        <h4>Земля</h4>
-                        <p>Текущая планета • Активна</p>
-                    </div>
-                    <div class="map-status active">Активна</div>
+                <!-- Вкладка планет -->
+                <div class="map-tab-content active" id="planets-tab">
+                    <!-- Планеты будут добавлены динамически -->
                 </div>
-                <div class="map-item locked" data-planet="mars" data-price="1000">
-                    <div class="map-planet">
-                        <div class="planet-image mars-planet"></div>
+
+                <!-- Вкладка систем -->
+                <div class="map-tab-content" id="systems-tab">
+                    <div class="systems-list" id="systems-list">
+                        <!-- Системы будут добавлены динамически -->
                     </div>
-                    <div class="map-info">
-                        <h4>Марс</h4>
-                        <p>Красная планета</p>
-                    </div>
-                    <div class="map-status locked">💰 1000</div>
-                </div>
-                <div class="map-item locked" data-planet="saturn" data-price="5000">
-                    <div class="map-planet">
-                        <div class="planet-image saturn-planet"></div>
-                    </div>
-                    <div class="map-info">
-                        <h4>Сатурн</h4>
-                        <p>Планета с кольцами</p>
-                    </div>
-                    <div class="map-status locked">💰 5000</div>
-                </div>
-                <div class="map-item locked" data-planet="jupiter" data-price="10000">
-                    <div class="map-planet">
-                        <div class="planet-image jupiter-planet"></div>
-                    </div>
-                    <div class="map-info">
-                        <h4>Юпитер</h4>
-                        <p>Самая большая планета</p>
-                    </div>
-                    <div class="map-status locked">💰 10000</div>
-                </div>
-                <div class="map-item locked" data-planet="sun" data-price="50000">
-                    <div class="map-planet">
-                        <div class="planet-image sun-planet"></div>
-                    </div>
-                    <div class="map-info">
-                        <h4>Солнце</h4>
-                        <p>Центр нашей системы</p>
-                    </div>
-                    <div class="map-status locked">💰 50000</div>
                 </div>
             </div>
         </div>
@@ -244,6 +212,19 @@
                             </div>
                             <button class="shop-buy-btn" id="watch-ad-btn" onclick="gameInstance.watchAd()">Смотреть
                                 рекламу</button>
+                        </div>
+
+                        <!-- Престиж (Rebirth) -->
+                        <div class="shop-item prestige" id="prestige-item">
+                            <div class="shop-item-content">
+                                <div class="shop-item-icon">🌟</div>
+                                <div class="shop-item-info">
+                                    <h4>Rebirth</h4>
+                                    <p>Сбросить прогресс и получить постоянный бонус!</p>
+                                    <small id="prestige-info">Требуется: Солнце + 1M денег</small>
+                                </div>
+                            </div>
+                            <button class="shop-buy-btn" id="prestige-btn" onclick="gameInstance.performPrestige(gameInstance.money)">Rebirth</button>
                         </div>
 
 
